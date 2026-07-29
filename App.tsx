@@ -11,6 +11,13 @@ import {
   sendNotificationSound
 } from '@/services/notifications'
 
+import {
+  simpleVibration,
+  repeatVibration,
+  cancelVibration,
+  longVibration
+} from '@/services/vibration'
+
 
 export default function App() {
 
@@ -47,7 +54,22 @@ export default function App() {
         onPress={() => execute(cancelAllNotifications)}
       />
 
-      <Button title='Quinto Button' />
+      <Button title='Vibrador simples' 
+      onPress={simpleVibration}
+      />
+
+      <Button title='Vibrador longo' 
+      onPress={longVibration}
+      />
+
+      <Button title='Vibrador repetido' 
+      onPress={repeatVibration}
+      />
+
+      <Button title='Cancelar Vibrador' 
+      onPress={cancelVibration}
+      />
+
     </View>
   )
 }
